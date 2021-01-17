@@ -8,6 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -17,14 +18,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class HelloWorldControllerTest {
 
     @Autowired
-    private HelloWorldController helloWorldController;
+    private WebApplicationContext was;
 
     private MockMvc mockMvc;
 
     @BeforeEach
     void beforeEach(){
         mockMvc = MockMvcBuilders
-                .standaloneSetup(helloWorldController)
+                .webAppContextSetup(was)
                 .alwaysDo(print())
                 .build();
 
