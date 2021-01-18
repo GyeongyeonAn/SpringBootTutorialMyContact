@@ -29,7 +29,7 @@ class PersonRepositoryTest {
         assertAll(
                 ()-> assertThat(person.getName()).isEqualTo("tony"),
                 ()-> assertThat(person.getHobby()).isEqualTo("reading"),
-                ()-> assertThat(person.getAddress()).isEqualTo("서울"),
+                ()-> assertThat(person.getAddress()).isEqualTo("Seoul"),
                 () -> assertThat(person.getBirthday()).isEqualTo(Birthday.of(LocalDate.of(1991,7,10))),
                 ()-> assertThat(person.getJob()).isEqualTo("officer"),
                 ()-> assertThat(person.getPhoneNumber()).isEqualTo("010-2222-5555"),
