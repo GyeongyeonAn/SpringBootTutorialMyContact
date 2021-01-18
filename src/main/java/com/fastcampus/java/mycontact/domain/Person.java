@@ -5,12 +5,13 @@ import com.fastcampus.java.mycontact.domain.dto.Birthday;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Where;
-import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
+
+import static org.springframework.util.StringUtils.hasText;
 
 @Entity
 @NoArgsConstructor
@@ -47,19 +48,19 @@ public class Person {
 
     public void set(PersonDto personDto){
 
-        if(StringUtils.hasText(personDto.getHobby())){
+        if(hasText(personDto.getHobby())){
             this.setHobby(personDto.getHobby());
         }
 
-        if(StringUtils.hasText(personDto.getAddress())){
+        if(hasText(personDto.getAddress())){
             this.setAddress(personDto.getAddress());
         }
 
-        if(StringUtils.hasText(personDto.getJob())){
+        if(hasText(personDto.getJob())){
             this.setJob(personDto.getJob());
         }
 
-        if(StringUtils.hasText(personDto.getPhoneNumber())){
+        if(hasText(personDto.getPhoneNumber())){
             this.setPhoneNumber(personDto.getPhoneNumber());
         }
 
