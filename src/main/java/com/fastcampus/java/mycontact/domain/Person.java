@@ -47,19 +47,19 @@ public class Person {
 
     public void set(PersonDto personDto){
 
-        if(!StringUtils.isEmpty(personDto.getHobby())){
+        if(StringUtils.hasText(personDto.getHobby())){
             this.setHobby(personDto.getHobby());
         }
 
-        if(!StringUtils.isEmpty(personDto.getAddress())){
+        if(StringUtils.hasText(personDto.getAddress())){
             this.setAddress(personDto.getAddress());
         }
 
-        if(!StringUtils.isEmpty(personDto.getJob())){
+        if(StringUtils.hasText(personDto.getJob())){
             this.setJob(personDto.getJob());
         }
 
-        if(!StringUtils.isEmpty(personDto.getPhoneNumber())){
+        if(StringUtils.hasText(personDto.getPhoneNumber())){
             this.setPhoneNumber(personDto.getPhoneNumber());
         }
 
